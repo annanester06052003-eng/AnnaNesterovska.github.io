@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Nesterovska — Visual Diary</title>
+    <style>
+        /* 1. RESET & FUNDAMENTALS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #FFFFFF;
+            color: #111111;
+            font-family: 'Helvetica Neue', Helvetica, Inter, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 2. NAVIGATION BAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #111111;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-left: 24px;
+            transition: opacity 0.2s ease;
+        }
+        nav a:hover {
+            opacity: 0.5;
+        }
+
+        /* 3. HERO & EDITORIAL RATIONALE */
+        .intro-container {
+            margin-top: 120px;
+            padding: 0 4% 40px 4%;
+            max-width: 800px;
+        }
+        .board-title {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        .rationale {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: #444444;
+        }
+
+        /* 4. ASYMMETRICAL MASONRY GRID */
+        .diary-grid {
+            padding: 0 4% 80px 4%;
+            column-count: 3;
+            column-gap: 16px;
+        }
+
+        .grid-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            display: block;
+            text-decoration: none;
+            color: #111111;
+        }
+
+        .img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background-color: #F7F7F7; /* Smooth placeholder load */
+            width: 100%;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+        }
+
+        /* Luxury Interactive Hover State */
+        .grid-item:hover img {
+            transform: scale(1.03);
+            opacity: 0.95;
+        }
+
+        /* Asymmetrical Aspect Ratio Variations */
+        .aspect-portrait .img-wrapper { aspect-ratio: 2 / 3; }
+        .aspect-square .img-wrapper { aspect-ratio: 1 / 1; }
+        .aspect-landscape .img-wrapper { aspect-ratio: 3 / 2; }
+        
+        .img-wrapper img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Tiny Metadata Tags */
+        .meta {
+            margin-top: 8px;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777777;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 5. RESPONSIVE DESIGN (MOBILE ELEVATION) */
+        @media (max-width: 900px) {
+            .diary-grid {
+                column-count: 2;
+            }
+            .board-title {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .diary-grid {
+                column-count: 1;
+            }
+            header {
+                padding: 0 6%;
+            }
+            .intro-container {
+                padding: 0 6% 30px 6%;
+            }
+            .diary-grid {
+                padding: 0 6% 60px 6%;
+            }
+            nav a {
+                margin-left: 16px;
+            }
+        }
+    </style>
+    <!-- Importing Premium Luxury Serif Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">Anna Nesterovska</div>
+        <nav>
+            <a href="#journal">Journal</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Editorial Rationale -->
+    <div class="intro-container">
+        <h1 class="board-title">Orchid Garden</h1>
+        <p class="rationale">
+            Aesthetic Curation & Visual Diary — Exploring the intersections of luxury brand codes, organic textures, and contemporary composition. Juxtaposing mid-century nostalgia with soft floral palettes.
+        </p>
+    </div>
+
+    <!-- The Fluid Image Stream in Exact Board Order -->
+    <main class="diary-grid" id="journal">
+
+        <!-- 01. Amanda Seyfried Style Study -->
+        <div class="grid-item aspect-portrait">
+            <div class="img-wrapper">
+                <!-- Replace src with your downloaded image path -->
+                <img src="https://unsplash.com" alt="Retro Styling Focus">
+            </div>
+            <div class="meta">
+                <span>01 / Editorial Inspo</span>
+                <span>Retro Hair Aesthetics</span>
+            </div>
+        </div>
+
+        <!-- 02. Pink & Yellow Summer Mango Palette -->
+        <div class="grid-item aspect-square">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Summer Fruit Texture">
+            </div>
+            <div class="meta">
+                <span>02 / Color Theory</span>
+                <span>Pastel Contrast</span>
+            </div>
+        </div>
+
+        <!-- 03. French Blond Portrait Profile -->
+        <div class="grid-item aspect-portrait">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Vogue Aesthetic Portrait">
+            </div>
+            <div class="meta">
+                <span>03 / Tone Exploration</span>
+                <span>Minimalist Beauty</span>
+            </div>
+        </div>
+
+        <!-- 04. White Tank / Organic Floral Backdrop -->
+        <div class="grid-item aspect-portrait">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Film Photography Composition">
+            </div>
+            <div class="meta">
+                <span>04 / Visual Narrative</span>
+                <span>La Vie En Rose</span>
+            </div>
+        </div>
+
+        <!-- 05. Monica Bellucci Summer Floral Code -->
+        <div class="grid-item aspect-landscape">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Luxury Gown Archive">
+            </div>
+            <div class="meta">
+                <span>05 / Brand Alignment</span>
+                <span>Italian Heritage Outfits</span>
+            </div>
+        </div>
+
+        <!-- 06. Pink Flora Hardware Close-up -->
+        <div class="grid-item aspect-portrait">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Orchid Aesthetic Macro">
+            </div>
+            <div class="meta">
+                <span>06 / Structural Form</span>
+                <span>Wilted Orchid Study</span>
+            </div>
+        </div>
+
+        <!-- 07. Piet Oudolf Landscape Curation -->
+        <div class="grid-item aspect-landscape">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Garden Landscape Composition">
+            </div>
+            <div class="meta">
+                <span>07 / Space Layout</span>
+                <span>Wildflower Harmony</span>
+            </div>
+        </div>
+
+        <!-- 08. Nelle Porter / Ally McBeal Nineties Archive -->
+        <div class="grid-item aspect-square">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="Nineties Tailoring Reference">
+            </div>
+            <div class="meta">
+                <span>08 / Wardrobe Architecture</span>
+                <span>Minimalist Power Dressing</span>
+            </div>
+        </div>
+
+        <!-- 09. Doutzen Kroes Vogue Spain Portrait -->
+        <div class="grid-item aspect-portrait">
+            <div class="img-wrapper">
+                <img src="https://unsplash.com" alt="High Fashion Makeup Curation">
+            </div>
+            <div class="meta">
+                <span>09 / Beauty Direction</span>
+                <span>Vogue Editorial Code</span>
+            </div>
+        </div>
+
+        <!-- 10. Jasmine Infusion / Table Curation -->
+        <div class="grid-item aspect-square">
+            <div class="img-wrapper">
+                
